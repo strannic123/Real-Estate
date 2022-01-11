@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
 
-  &__btn {
+  .nav__btn {
     border: none;
     border-radius: 0;
 
@@ -18,10 +18,10 @@
     &::before,
     &::after {
       content: "";
+      display: block;
       height: 2px;
       width: 4.5rem;
       background-color: #fff;
-      display: block;
     }
 
     &::before {transform: translateY(-1.5rem)};
