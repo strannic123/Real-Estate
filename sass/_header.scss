@@ -8,14 +8,22 @@
   padding-top: 4rem;
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 2rem;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    padding: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1
+  }
 
   &__logo {
-    height: 3rem;
+    width: 15rem;
     align-self: start;
     justify-self: center;
   }
@@ -49,9 +57,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    align-items: center;
 
     img {
-      height: 3rem;
+      max-height: 3rem;
+      max-width: 100%;
       filter: brightness(70%);
     }
   }
